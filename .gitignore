@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# https://api.openweathermap.org/data/2.5/weather?q=delhi&appid=e045b569dd462141d2cf6cc28e88c106
