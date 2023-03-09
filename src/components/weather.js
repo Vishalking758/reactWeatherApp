@@ -18,7 +18,7 @@ fetchApi();
     <div className="container">
         <div className="d-flex justify-content-center align-items-center vh-100">
           <div
-            className="card border-success mb-3 vh-50"
+            className="card border-success mb-3 vh-75"
             style={{ width: "18rem" }}
           >
             <div className="card-header">Weather</div>
@@ -27,6 +27,7 @@ fetchApi();
               <input
                 className="form-control border-success"
                 type="search"
+                style={{ textTransform: 'uppercase'}}
                 placeholder=""
                 aria-label="Search"
                 htmlvalue={city}
@@ -36,13 +37,13 @@ fetchApi();
               />
               {!city ?(
                 <div>
-                <h6 className="card-subtitle my-4">City not found</h6>
+                <h6 className="card-subtitle my-4" style={{ textTransform: 'uppercase'}}>City not found</h6>
               <h6 className="card-subtitle my-4">Search valid city</h6>
              
               </div>
               ) :( 
               <div>
-                <h6 className="card-subtitle my-4">{search}</h6>
+                <h6 className="card-subtitle my-4" style={{ textTransform: 'uppercase'}}>{search}</h6>
               <h6 className="card-subtitle my-4">{city.temp}°C</h6>
               <h6 className="card-subtitle mt-2">Max: {city.temp_max}°C, Min: {city.temp_min}°C</h6>
               </div>
