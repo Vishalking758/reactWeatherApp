@@ -4,12 +4,22 @@ import React, { useEffect, useState } from 'react'
 export default function Weather() {
  const [city, setCity] = useState(null);
  const [search, setSearch] = useState("delhi");
+ const [visibility, setVisibility] = useState(null);
+ const [wind, setWind] = useState(null);
+ const [atmos, setAtmos] = useState(null);
+ const [country, setCountry] = useState(null);
+
  useEffect( ()=>{
 const fetchApi = async() =>{
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=e045b569dd462141d2cf6cc28e88c106`;
   const response = await fetch(url);
   const resjsn = await response.json(url);
   setCity(resjsn.main);
+  setVisibility(resjsn.visibility);
+  setWind(resjsn.wind);
+  setAtmos(resjsn.weather[0].description);
+  setCountry(resjsn.sys);
+ 
 };
 fetchApi();
  },[search]);
@@ -44,8 +54,13 @@ fetchApi();
               ) :( 
               <div>
                 <h6 className="card-subtitle my-4" style={{ textTransform: 'uppercase'}}>{search}</h6>
-              <h6 className="card-subtitle my-4">{city.temp}°C</h6>
-              <h6 className="card-subtitle mt-2">Max: {city.temp_max}°C, Min: {city.temp_min}°C</h6>
+                <h6 className="card-subtitle my-4" >Country =&gt; {country.country}</h6>
+              <h6 className="card-subtitle my-4">Temp =&gt; ({city.temp}°C)</h6>
+              <h6 className="card-subtitle my-4">Max: {city.temp_max}°C, Min: {city.temp_min}°C</h6>
+              <h6 className="card-subtitle my-4">humidity =&gt; {city.humidity}</h6>
+              <h6 className="card-subtitle my-4">Wind Speed =&gt; ({wind.speed})</h6>
+              <h6 className="card-subtitle my-4">Atmosphere =&gt; ({atmos})</h6>
+              <h6 className="card-subtitle mt-2">visibility =&gt; ({visibility})</h6>
               </div>
               )}
              
