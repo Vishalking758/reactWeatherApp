@@ -43,10 +43,10 @@ export default function Weather() {
             />
           </div>
 
-          <div className="vh-75 row rounded border-white p-0 m-0">
+          <div className="vh-75 row border rounded border-white p-0 m-0">
             {!city ? (
               <>
-                <div className="col-md-6 border rounded border-white text-white">
+                <div className="col-md-6  text-white">
                   <h3
                     className="card-subtitle my-4 ps-3 text-center"
                     style={{ textTransform: "uppercase" }}
@@ -104,7 +104,7 @@ export default function Weather() {
               </>
             ) : (
               <>
-                <div className="col-md-6 border rounded border-white text-white">
+                <div className="col-md-6 text-white">
                   <h3
                     className="card-subtitle my-4 ps-3 text-center"
                     style={{ textTransform: "uppercase" }}
@@ -135,7 +135,7 @@ export default function Weather() {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-6 border rounded border-white text-white">
+                <div className="col-md-6  text-white">
                   <div className="bg-transparent card border-0">
                     <div class="card-body text-center">
                       <h5 class="card-title"> Humidit </h5>
